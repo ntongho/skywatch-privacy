@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Sky Watch</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+        }
+        .policy-container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1 {
+            color: #111;
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+        }
+        .effective-date {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+        }
+        h2 {
+            color: #0056b3;
+            font-size: 1.5rem;
+            margin-top: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #444;
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+        p, li {
+            font-size: 1rem;
+            color: #4a4a4a;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        code {
+            background: #f1f1f1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+        a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .contact-info {
+            background: #f8f9fa;
+            border-left: 4px solid #0056b3;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="policy-container">
+    <h1>Sky Watch Privacy Policy</h1>
+    <div class="effective-date">Effective date: 17 October 2026</div>
+
+    <h2>Who operates Sky Watch</h2>
+    <p>Sky Watch is operated by <strong>harbour Team</strong>. For privacy questions or requests, contact <a href="mailto:harbouronsupport@gmail.com">harbouronsupport@gmail.com</a>.</p>
+
+    <h2>Information the app sends</h2>
+    <ul>
+        <li><strong>Installation-specific client ID:</strong> The app creates a random identifier and stores it in Android app-private preferences on your device. It sends this ID to our hosted service to record, retrieve, and summarize history. It is not an account login. The ID is the only access check for that history, so anyone who obtains it may be able to read the associated history.</li>
+        <li><strong>Search and place details:</strong> City search text is sent to our API for geocoding. When you select a place, the app sends the city, optional state/region, country, latitude, and longitude to our service to retrieve information and record the lookup.</li>
+        <li><strong>Lookup history:</strong> The service stores the client ID, city/state/country, coordinates, timestamp, and, when available, weather/AQI readings and next ISS-pass information associated with a lookup.</li>
+        <li><strong>Feature requests:</strong> Requested coordinates or dates are sent to our API for weather, air quality, ISS passes/position, and astronomy information.</li>
+        <li><strong>Connection data:</strong> Render's hosting/request-log infrastructure may receive IP addresses and request metadata. The service operator reports that the current free/Hobby plan retains request logs for seven days. Confirm that this is the active plan and current retention period before publication.</li>
+    </ul>
+    <p>The current Android app does not request Android device-location permission and does not require an account. Coordinates come from a city you search for or select; the app does not need GPS access to obtain them. Application logs do not include client IDs, coordinates, or IP addresses.</p>
+
+    <h2>How information is used</h2>
+    <p>We use the information above to answer feature requests, provide client-scoped lookup history and statistics, and maintain and troubleshoot the service.</p>
+
+    <h2>Service providers and data sharing</h2>
+    <p>The app sends API requests to <code>https://skywatch-x6yn.onrender.com/</code>. The hosted service operator reports using these providers:</p>
+    <ul>
+        <li><strong>OpenWeatherMap:</strong> city geocoding, weather, and air-quality data. City search text and/or coordinates are sent as required by the requested endpoint. Confirm the exact fields sent for geocoding and each weather/air-quality request before publication.</li>
+        <li><strong>NASA and NASA Science:</strong> Astronomy Picture of the Day data and image assets. The requested APOD date is sent to the service; the operator reports the user's location is not sent to NASA. The Android app can load returned NASA Science image URLs directly to display APOD/background images, so the image host can receive the device's IP address and image request, but not the app's client ID or selected city coordinates.</li>
+        <li><strong>Where the ISS at? and Open Notify:</strong> ISS position services. Open Notify is an HTTP fallback; the operator reports no user-derived data is sent in these position requests.</li>
+        <li><strong>Pollux Labs:</strong> ISS pass predictions. The service uses the selected location for pass predictions. Confirm whether selected coordinates are sent to Pollux Labs before publication.</li>
+    </ul>
+    <p>The client ID is not forwarded to these upstream data providers. We do not sell personal information. We use Render to host the API and Aiven for PostgreSQL storage; these infrastructure providers process data as needed to operate the service.</p>
+
+    <h2>Retention and deletion</h2>
+    <p>Lookup history is retained indefinitely until an operator deletes it; there is currently no automatic expiry or pruning. The app has no in-app history-deletion control, and the public API has no delete endpoint. The operator can manually delete records when they can identify the relevant client ID. The Android app currently does not show or provide a way to copy that ID, so a user may not be able to supply it. To ask about a record or deletion, contact <a href="mailto:harbouronsupport@gmail.com">harbouronsupport@gmail.com</a>. We will explain whether we can identify and delete the record; deletion is not automatic or self-service.</p>
+
+    <h2>Security</h2>
+    <p>App-to-service requests use HTTPS. Connections to PostgreSQL use TLS and Aiven encrypts database volumes and backups at rest. History access is based on the random client ID rather than an account or authenticated session. The Android app currently stores the ID in app-private preferences, not encrypted preferences; keep the ID private. We do not claim application-level encryption of database fields.</p>
+
+    <h2>Children's privacy</h2>
+    <p>Sky Watch is a general-audience weather and astronomy app. It is not specifically designed for or directed to children. We do not knowingly ask children to provide identifying information. If a parent or guardian believes a child has submitted information through the service, please contact us at <a href="mailto:harbouronsupport@gmail.com">harbouronsupport@gmail.com</a>. We will review the request and take appropriate steps under applicable law.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>We may update this policy when the app or its data practices change. We will update the effective date and publish the current version at this public URL: <code>[INSERT FINAL PUBLIC HTTPS POLICY URL]</code>.</p>
+
+    <h2>Contact harbour Team</h2>
+    <div class="contact-info">
+        Email: <a href="mailto:harbouronsupport@gmail.com">harbouronsupport@gmail.com</a>
+    </div>
+</div>
+
+</body>
+</html>
