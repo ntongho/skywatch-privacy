@@ -91,7 +91,7 @@
         <li><strong>Search and place details:</strong> City search text is sent to our API for geocoding. When you select a place, the app sends the city, optional state/region, country, latitude, and longitude to our service to retrieve information and record the lookup.</li>
         <li><strong>Lookup history:</strong> The service stores the client ID, city/state/country, coordinates, timestamp, and, when available, weather/AQI readings and next ISS-pass information associated with a lookup.</li>
         <li><strong>Feature requests:</strong> Requested coordinates or dates are sent to our API for weather, air quality, ISS passes/position, and astronomy information.</li>
-        <li><strong>Connection data:</strong> Render's hosting/request-log infrastructure may receive IP addresses and request metadata. The service operator reports that the current free/Hobby plan retains request logs for seven days. Confirm that this is the active plan and current retention period before publication.</li>
+        <li><strong>Connection data:</strong> Render's hosting/request-log infrastructure may receive IP addresses and request metadata. The service operator reports that the current free/Hobby plan retains request logs for seven days.</li>
     </ul>
     <p>The current Android app does not request Android device-location permission and does not require an account. Coordinates come from a city you search for or select; the app does not need GPS access to obtain them. Application logs do not include client IDs, coordinates, or IP addresses.</p>
 
@@ -101,10 +101,10 @@
     <h2>Service providers and data sharing</h2>
     <p>The app sends API requests to <code>https://skywatch-x6yn.onrender.com/</code>. The hosted service operator reports using these providers:</p>
     <ul>
-        <li><strong>OpenWeatherMap:</strong> city geocoding, weather, and air-quality data. City search text and/or coordinates are sent as required by the requested endpoint. Confirm the exact fields sent for geocoding and each weather/air-quality request before publication.</li>
+        <li><strong>OpenWeatherMap:</strong> city geocoding, weather, and air-quality data. City search text and/or coordinates are sent as required by the requested endpoint.</li>
         <li><strong>NASA and NASA Science:</strong> Astronomy Picture of the Day data and image assets. The requested APOD date is sent to the service; the operator reports the user's location is not sent to NASA. The Android app can load returned NASA Science image URLs directly to display APOD/background images, so the image host can receive the device's IP address and image request, but not the app's client ID or selected city coordinates.</li>
         <li><strong>Where the ISS at? and Open Notify:</strong> ISS position services. Open Notify is an HTTP fallback; the operator reports no user-derived data is sent in these position requests.</li>
-        <li><strong>Pollux Labs:</strong> ISS pass predictions. The service uses the selected location for pass predictions. Confirm whether selected coordinates are sent to Pollux Labs before publication.</li>
+        <li><strong>Pollux Labs:</strong> ISS pass predictions. The service uses the selected location for pass predictions.</li>
     </ul>
     <p>The client ID is not forwarded to these upstream data providers. We do not sell personal information. We use Render to host the API and Aiven for PostgreSQL storage; these infrastructure providers process data as needed to operate the service.</p>
 
